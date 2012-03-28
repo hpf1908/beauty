@@ -1,0 +1,32 @@
+<< var item = curitem;>>
+<< if(item) {>>
+<div class="item" style="width:500px">
+    <a class="image" userid="<<=item.userid>>" itemid="<<=item.itemId>>" target="_blank" 
+        href="http://api.t.sina.com.cn/<<=item.userid>>/statuses/<<=item.itemId>>?source=<<=site.apikey>>">
+        <img src="<<=item.middlePic>>" /></a>
+    <p class="text"><strong><<=item.username>></strong>:<<=item.content>></p> 
+    <p class="bars"><<=item.createTimeStr>>
+        <a title="我喜欢这个<<=site.word>>" class="like pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/like.gif"> <span><<=item.likes>></span></a>
+        <a title="分享到新浪微博" class="share pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/weibo_share.png"></a>
+    </p>
+</div>
+<<} else { >>
+    <p>错误的itemid</p>
+<<}>>
+<<if(items.length > 0){>>
+<h2 class="clear">其它受欢迎的<<=site.word>></h2>
+<div class="items" style="position: relative; height: 5301px; ">
+    <div id="first-loading" style="text-align: center;"><img alt="Loading..." src="/images/loader.gif"><div><em>加载<<=site.word>>中...</em></div></div>
+    <<for(var i = 0 , len = items.length; i < len; i ++) { var item = items[i];>>
+    <div style="opacity: 0;" class="item">
+        <a class="image" userid="<<=item.userid>>" itemid="<<=item.itemId>>" target="_blank" href="http://<<=site.domain>>/show/<<=item.itemId>>">
+            <img style="width:205px;" src="<<=item.picUrl>>" /></a>
+        <p class="text"><strong><<=item.username>></strong>:<<=item.content>></p> 
+        <p class="bars"><<=item.createTimeStr>>
+            <a title="我喜欢这个<<=site.word>>" class="like pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/like.gif"> <span><<=item.likes>></span></a>
+            <a title="分享到新浪微博" class="share pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/weibo_share.png"></a>
+        </p>
+    </div>
+    <<}>>
+</div>
+<<}>>

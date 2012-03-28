@@ -1,0 +1,19 @@
+<<if(items.length > 0){>>
+<div id="first-loading" style="text-align: center;"><img alt="Loading..." src="/images/loader.gif"><div><em>加载<<=site.word>>中...</em></div></div>
+<div class="items masonry" style="position: relative; height: 5301px; ">
+    <<for(var i = 0 , len = items.length; i < len; i ++) { var item = items[i];>>
+    <div style="opacity: 0;" class="item masonry-brick">
+        <a class="image" userid="<<=item.userid>>" itemid="<<=item.itemId>>" target="_blank" href="http://<<=site.domain>>/show/<<=item.itemId>>">
+            <img style="width:205px;" src="<<=item.picUrl>>"></a>
+        <p class="text"><strong><<=item.username>></strong>:<<=item.content>></p> 
+        <p class="bars"><<=item.createTimeStr>> 
+            <a title="我喜欢这个<<=site.word>>" class="like pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/like.gif"> <span><<=item.likes>></span></a>
+            <a title="分享到新浪微博" class="share pull-right" href="javascript:;"><img src="http://<<=site.domain>>/images/weibo_share.png"></a>
+        </p>
+    </div>
+    <<}>>
+</div>
+<p id="page_nav" class="clear" style="display:none;"><a href="http://<<=site.domain>>/<<=sort>>/2">2</a></p>
+<<} else { >>
+    <p>OH, 暂时还没有相关的数据！！！</p>
+<<}>>
