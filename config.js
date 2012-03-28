@@ -27,7 +27,7 @@ module.exports = {
 		word       : '美女',                                         //站点显示的关键字
 		apikey     : 'xxxxxxx',
 		domain     : domain,
-		fetchwords : ['美女','大腿','美臀','苍井空','女优'],        //抓取的关键字
+		fetchwords : ['xx','xx'],        //抓取的关键字
 		blogType   :'tsina'
 	},
 	fetch_interval : 60 * 1000                                     //抓取新浪微博的时间间隔
